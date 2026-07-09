@@ -1,0 +1,1 @@
+Open index.html in a browser. Upload the whole folder to Netlify, Vercel, GitHub Pages, or Framer custom code/embed workflow. Replace assets with higher-resolution project photos if desired.
