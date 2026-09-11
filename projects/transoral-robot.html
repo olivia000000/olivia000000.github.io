@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Transoral Surgical Robot | Olivia Fan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .project-page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 60px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: var(--accent2);
+    }
+
+    .header-with-gif {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      margin: 20px 0 30px;
+    }
+
+    .header-with-gif h1 {
+      margin: 0; /* Clears the default margin so flex alignment works properly */
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(50px, 5vw, 75px);
+      margin: 0 0 30px;
+    }
+
+    .header-gif {
+      width: 200px;       /* Adjust width as needed */
+      height: auto;
+      border-radius: 16px; /* Optional: adds rounded corners to match your design theme */
+      display: block;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 820px) {
+      .header-with-gif {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .header-gif {
+        width: 100px;
+      }
+    }
+
+    .project-intro {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: clamp(19px, 2vw, 25px);
+      line-height: 1.5;
+      margin-bottom: 60px;
+    }
+
+    .hero-project-image {
+        width: 400px;
+        height: 600px; /* Move height here */
+        border-radius: 28px;
+        overflow: hidden; /* Clips the child image to the 28px rounded corners */
+        background-color: var(--card); /* Optional: fills empty space if image is letterboxed */
+    }
+
+    .hero-project-image img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-overview {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 0px;
+      align-items: center;
+      margin: 50px 0 80px;
+    }
+
+    .hero-project-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: contain;
+      display: block;
+      border-radius: 28px;
+    }
+
+    .overview-content {
+        border-top: 2px solid #8ab3a3;
+        padding-top: 30px;
+    }
+
+    .overview-content h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(40px, 5vw, 65px);
+        margin: 0 0 25px;
+    }
+
+    .overview-content p {
+        color: #57514a;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 820px) {
+        .hero-overview {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .hero-project-image img {
+            height: auto;
+        }
+    }
+
+    .project-grid-4col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      border-top: 2px solid #8ab3a3;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+    }
+
+    .textbox-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 36px);
+      margin: 0;
+    }
+
+    .textbox-left p,
+    .project-grid li,
+    .textbox-right p {
+      color: #57514a;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+    
+    .actuation_box {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+      border-top: 2px solid #8ab3a3;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .actuation_box_img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+    }
+
+    .mechanical-changes {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+      border-top: 2px solid #8ab3a3;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+/* Places header on the left and image on the right */
+/* Header & Image Layout Adjustments */
+    .header-image-row {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Reduced gap to move image closer to the header on the left */
+      margin-bottom: 15px;
+    }
+
+    .header-image-row h2 {
+      flex: 0.8; /* Makes heading section narrower */
+    }
+
+    .header-image-row .cable_guide_channels {
+      flex: 1.5; /* Makes image container significantly larger */
+    }
+
+    .cable_guide_channels img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+    }
+
+    .textbox-left h2,
+    .textbox-right h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 36px);
+      margin: 0;
+    }
+
+    .textbox-left p,
+    .textbox-right p {
+      color: #57514a;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .exit_channels img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+      margin-bottom: 10px;
+    }
+
+    .project-grid ul {
+      padding-left: 22px;
+    }
+
+    .dvrk-tors-studies {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+      border-top: 2px solid #8ab3a3;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    /* Column 1 vertical stack */
+    .dvrk-col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Image & GIF styling */
+    .dvrk-horizontal-img img,
+    .dvrk-gif-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 820px) {
+      .dvrk-tors-studies {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .project-page {
+        padding-top: 50px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .project-gallery img {
+        height: auto;
+      }
+    }
+
+    .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  </style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Adds 'visible' when entering view, removes 'visible' when leaving view
+        entry.target.classList.toggle('visible', entry.isIntersecting);
+      });
+    }, {
+      threshold: 0.15 // Triggers when 15% of the element is visible
+    });
+
+    reveals.forEach((element) => observer.observe(element));
+  });
+</script>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Back to home">XF</a>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <main class="project-page">
+
+    <a class="back-link" href="../index.html#work">
+      ← Back to Projects
+    </a>
+
+    <div class="section-kicker">
+      N°001 · Surgical Robotics
+    </div>
+
+    <div class="header-with-gif">
+      <h1>
+        Transoral<br>
+        Surgical Robot
+      </h1>
+      <img 
+        src="../assets/jaw_gif.gif" 
+        alt="Transoral Surgical Robot in motion" 
+        class="header-gif"
+          >
+    </div>
+
+    <p class="project-intro">
+      Development of a miniature surgical tool for transoral robotic
+      surgery at the PCIGITI Lab at SickKids Hospital.
+    </p>
+
+
+  <div class="hero-overview">
+
+    <div class="hero-project-image">
+      <img
+        src="../assets/TORS Tool.png"
+        alt="Transoral surgical robot tool"
+      />
+    </div>
+
+    <section class="overview-content">
+
+      <div>
+        <h2>Overview</h2>
+      </div>
+
+      <div>
+        <p>
+          During my co-op term at the PCIGITI Lab, I worked on the
+          development of a miniature transoral surgical tool designed
+          for use in transoral robotic surgery.
+        </p>
+
+        <p>
+          The project involved mechanical design, prototyping,
+          fabrication, testing, and iteration. Through testing of the instrument, I identified issues in the design and made key changes detailed in this page.
+        </p>
+
+      </div>
+
+    </section>
+
+</div>
+
+  <section class="project-grid-4col reveal">
+
+    <!-- Left Textbox -->
+    <div class="textbox-left">
+      <h2>The Tooltip</h2>
+      <p>
+        When I took on this project, the tooltip already had an existing design as shown to the right. The cable-actuated instrument has a wrist and an elbow, 
+        each with pitch and yaw. 
+      </p>
+      <p>The wrist is 3mm in diameter and the elbow is 4mm in diameter. The whole thing is about the width of 2 toothpicks.
+      </p>
+    </div>
+
+    <!-- Center Image 1 -->
+    <div class="image-container">
+      <img
+        src="../assets/TORS_Tooltip.png"
+        alt="TORS tooltip"
+      >
+    </div>
+
+    <!-- Center Image 2 -->
+    <div class="image-container">
+      <img
+        src="../assets/new_link_design.png"
+        alt="New link design"
+      >
+    </div>
+
+    <!-- Right Textbox -->
+    <div class="textbox-right">
+      <p>
+        During testing, I determined friction within the joints to be significant and thus redesigned the tooltip to improve performance. 
+      </p>
+      <p>
+        On the right is my new linkage design, the main changes are: replacing circular cable channels with flat channels, 
+        increasing the pin length, and adding a groove for a retainer ring.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="actuation_box reveal">
+
+    <!-- Left Textbox -->
+    <div class="textbox-left">
+      <h2>Actuation Box</h2>
+      <p>
+        The actuation box is the part of the instrument that houses the motors and electronics and is how we move the tooltip.
+        During my time working here, I had to know how to assemble and disassemble the actuation box, and also helped with testing the motors and electronics.
+      </p>
+    </div>
+
+    <!-- Right Image Container -->
+    <div class="actuation_box_img">
+      <img
+        src="../assets/actuation_box.png"
+        alt="Actuation box component"
+      >
+    </div>
+
+  </section>
+
+  <section class="mechanical-changes reveal">
+
+    <!-- Cable Guide Channels Block -->
+    <div class="textbox-left">
+      <div class="header-image-row">
+        <h2>Cable Guide Channels</h2>
+        <div class="cable_guide_channels">
+          <img
+            src="../assets/guide_channels.png"
+            alt="guide channels"
+          >
+        </div>
+      </div>
+      <p>
+        One mechanical change I made to the design was adding guide channels using tubes fixed to each other in a bundle which is then fixed within the shaft. 
+        Cables then pass freely through the guide channels. Previously, thin steel tubes were fixed to the cables via crimping then passed through the shaft.
+        This design change makes assembly much easier as well as ensures relative cable positions are fixed so no entanglement can occur.
+      </p>
+    </div>
+
+    <!-- Cable Exit Guides Block -->
+    <div class="exit_channels">
+      <img
+        src="../assets/shaft_exit_guide.png"
+        alt="guide channels"
+      >
+      <img
+        src="../assets/shaft_exit_guide_CAD.png"
+        alt="guide channels"    
+      >
+    </div>
+    
+    <div class="textbox-right">
+      <h2>Cable Exit Guides</h2>
+      <p>
+        Previously, cables came out of shaft at sharp angles, rubbing against edge of shaft which resulted in breakages.
+        I designed a part that sits at the bottom of the shaft and guides cables to the pulleys with a larger radius, reducing friction and stress concentrations.
+        2 halves are attached to the shaft using a clamping mechanism.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="dvrk-tors-studies reveal">
+
+    <div class="dvrk-col-left">
+      <div class="textbox-left">
+        <h2>DVRK TORS Studies</h2>
+        <p>
+          As a sidequest for this project, I also helped with the TORS Davinci studies. The predecessor of the elbow-wrist TORS is a wristed TORS Davinci instrument. 
+          This tool is currently in the in-vivo testing phase and I had the opportunity to help with the testing and data collection.
+          Through this, I gained a base understanding of the electrical and mechanical components of the DVRK as well as the software and operating system.
+        </p>
+        <p>
+          On the right, you can see me teleoperating the Davinci robot. Underneath is a group picture of me and some colleagues during one of the studies. 
+        </p>
+      </div>
+      <div class="dvrk-horizontal-img">
+        <img
+          src="../assets/TORS_study.png"
+          alt="DVRK TORS study"
+        >
+      </div>
+    </div>
+
+  <div class="dvrk-gif-container">
+    <img
+      src="../assets/DVRK_gif.gif"
+      alt="DVRK TORS study animation"
+    >
+  </div>
+
+</section>
+
+  <footer>
+    <span>© 2026 Olivia Fan</span>
+    <a href="../index.html#top">Back to top ↑</a>
+  </footer>
+
+</body>
+</html>
